@@ -9,6 +9,20 @@ Two Jupyter notebooks demonstrating classic integer-programming decomposition te
 
 Both notebooks include problem generation, solver setup, the optimization loop, and visualizations of each iteration plus convergence plots.
 
+## Repository Layout
+
+The notebooks hold the theory and the optimization loops; function definitions and plotting live in helper modules next to them:
+
+```
+├── helpers.py                    # shared: color palette, distance matrix, iteration-grid plot
+├── tsp_helpers.py                # TSP master problem, subtour detection, TSP plots
+├── vrp_helpers.py                # VRP route cost, restricted master, pricing subproblem, VRP plots
+├── tsp_row_generation.ipynb
+└── vrp_column_generation.ipynb
+```
+
+Open the notebooks from the repository root so these imports resolve.
+
 ## Setup
 
 Dependencies are managed with [Poetry](https://python-poetry.org/).
@@ -22,4 +36,4 @@ Then open either notebook in VS Code or Jupyter and select the **"Python (tsp)"*
 
 ## Dependencies
 
-pyomo, highspy (HiGHS solver), numpy, matplotlib, networkx, ipykernel, jupyter.
+pyomo, highspy (HiGHS solver), numpy, matplotlib, ipykernel, jupyter.
